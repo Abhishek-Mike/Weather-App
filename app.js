@@ -1,4 +1,5 @@
-// Weather App using Fetch Api
+// Weather App using Fetch Api 
+// https://abhishek-mike.github.io/Weather-App/
 var cityName = document.querySelector('.cityName');
 var button = document.querySelector('.button');
 
