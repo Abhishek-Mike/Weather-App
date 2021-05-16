@@ -4,6 +4,7 @@
 3) Background image changes wrt live city conditions.
 
 Click here to check out the latest weather at your location before you head out: 
+
 https://abhishek-mike.github.io/Weather-App/
 
 
