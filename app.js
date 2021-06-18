@@ -32,15 +32,14 @@ cityName.addEventListener('keypress', (event) => {
 
 // Get Weather Details
 getWeather(city) => {
-    try {
         fetch(`${weatherApi.Url}?q=${city}&appid=${weatherApi.key}&units=metric`)
         .then(response => {
             return response.json();
         })
         .then(showWeather);           
-    } catch (error) {
-        alert("Wrong City Name Bro !");
-        console.log(error);
+        .catch (err) {
+         alert('Wrong City Name Bro !');
+         console.log(err);
     }       
 }
 
