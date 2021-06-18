@@ -31,20 +31,24 @@ cityName.addEventListener('keypress', (event) => {
 });
 
 // Get Weather Details
-getWeather(city) => {
+function getWeather(city) {
         fetch(`${weatherApi.Url}?q=${city}&appid=${weatherApi.key}&units=metric`)
+        // response to be receive object notation
         .then(response => {
-            return response.json();
+            return response.json()
         })
-        .then(showWeather);           
-        .catch (err) {
-         alert('Wrong City Name Bro !');
-         console.log(err);
-    }       
+        // passed to showWeather function
+        .then(showWeather) 
+        // error handling          
+        .catch((err)=> {
+            if(city === undefined)
+            alert('Wrong City Name Bro !');
+            console.log(err);
+        })       
 }
 
 // Show Weather Report
- showWeather(response) => {
+ function showWeather(response)  {
     console.log(response);
     var visibility = document.querySelector('.visibility');
     var weather = document.querySelector('.weather');
@@ -92,7 +96,7 @@ getWeather(city) => {
 }
 
 // Date manage
- dateManage(dateArg) => {
+ function dateManage(dateArg) {
 
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
