@@ -16,8 +16,6 @@ const weatherApi = {
 button.addEventListener('click',(event)=>{
         console.log(cityName.value);
         getWeather(cityName.value);
-        if(city == undefined)
-            alert('Wrong City Name Bro !');
         document.querySelector('.display').style.display = "block";
 })
 
@@ -27,6 +25,8 @@ cityName.addEventListener('keypress', (event) => {
     if(event.keyCode == 13) {
         console.log(cityName.value);
         getWeather(cityName.value);
+        if (cityName.value == undefined)
+            alert('Not a city');
         document.querySelector('.display').style.display = "block";
     }
 
