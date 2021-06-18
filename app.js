@@ -16,6 +16,8 @@ const weatherApi = {
 button.addEventListener('click',(event)=>{
         console.log(cityName.value);
         getWeather(cityName.value);
+        if(city == undefined)
+            alert('Wrong City Name Bro !');
         document.querySelector('.display').style.display = "block";
 })
 
@@ -35,14 +37,14 @@ function getWeather(city) {
         fetch(`${weatherApi.Url}?q=${city}&appid=${weatherApi.key}&units=metric`)
         // response to be receive object notation
         .then(response => {
-            return response.json()
+            return response.json();
+            if(response.sys.message == "city not found" )
+            alert('Wrong City Name Bro !');
         })
         // passed to showWeather function
         .then(showWeather) 
         // error handling          
         .catch((err)=> {
-            if(city == undefined)
-            alert('Wrong City Name Bro !');
             console.log(err);
         })       
 }
