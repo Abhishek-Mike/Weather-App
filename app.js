@@ -25,8 +25,6 @@ cityName.addEventListener('keypress', (event) => {
     if(event.keyCode == 13) {
         console.log(cityName.value);
         getWeather(cityName.value);
-        if (cityName.value == undefined)
-            alert('Not a city');
         document.querySelector('.display').style.display = "block";
     }
 
@@ -38,8 +36,6 @@ function getWeather(city) {
         // response to be receive object notation
         .then(response => {
             return response.json();
-            if(response.sys.message == "city not found" )
-            alert('Wrong City Name Bro !');
         })
         // passed to showWeather function
         .then(showWeather) 
