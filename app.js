@@ -41,7 +41,7 @@ function getWeather(city) {
         .then(showWeather) 
         // error handling          
         .catch((err)=> {
-            if(city === undefined)
+            if(city == undefined)
             alert('Wrong City Name Bro !');
             console.log(err);
         })       
